@@ -1,0 +1,30 @@
+[2024-10-14T04:55:00.862+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-14T04:55:00.876+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kaggle_ml_pipeline.GetDataKaggle manual__2024-10-14T04:54:58.226225+00:00 [queued]>
+[2024-10-14T04:55:00.882+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kaggle_ml_pipeline.GetDataKaggle manual__2024-10-14T04:54:58.226225+00:00 [queued]>
+[2024-10-14T04:55:00.883+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-14T04:55:00.894+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): GetDataKaggle> on 2024-10-14 04:54:58.226225+00:00
+[2024-10-14T04:55:00.903+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=6240) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-14T04:55:00.904+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'kaggle_ml_pipeline', 'GetDataKaggle', 'manual__2024-10-14T04:54:58.226225+00:00', '--job-id', '99', '--raw', '--subdir', 'DAGS_FOLDER/dmc_pipeline.py', '--cfg-path', '/tmp/tmp0vg_n24_']
+[2024-10-14T04:55:00.905+0000] {standard_task_runner.py:105} INFO - Job 99: Subtask GetDataKaggle
+[2024-10-14T04:55:00.905+0000] {standard_task_runner.py:72} INFO - Started process 6283 to run task
+[2024-10-14T04:55:00.943+0000] {task_command.py:467} INFO - Running <TaskInstance: kaggle_ml_pipeline.GetDataKaggle manual__2024-10-14T04:54:58.226225+00:00 [running]> on host 3865df127200
+[2024-10-14T04:55:01.014+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kaggle_ml_pipeline' AIRFLOW_CTX_TASK_ID='GetDataKaggle' AIRFLOW_CTX_EXECUTION_DATE='2024-10-14T04:54:58.226225+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-14T04:54:58.226225+00:00'
+[2024-10-14T04:55:01.016+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-14T04:55:01.016+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-14T04:55:01.016+0000] {logging_mixin.py:190} INFO - Current task name:GetDataKaggle state:running start_date:2024-10-14 04:55:00.877091+00:00
+[2024-10-14T04:55:01.017+0000] {logging_mixin.py:190} INFO - Dag name:kaggle_ml_pipeline and current dag run status:running
+[2024-10-14T04:55:01.017+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-14T04:55:02.011+0000] {logging_mixin.py:190} INFO - train.csv: Skipping, found more recently modified local copy (use --force to force download)
+[2024-10-14T04:55:03.487+0000] {logging_mixin.py:190} INFO - test.csv: Skipping, found more recently modified local copy (use --force to force download)
+[2024-10-14T04:55:03.492+0000] {python.py:240} INFO - Done. Returned value was: opt/***/dags/data/train.csv/train.csv
+[2024-10-14T04:55:03.514+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-14T04:55:03.515+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=kaggle_ml_pipeline, task_id=GetDataKaggle, run_id=manual__2024-10-14T04:54:58.226225+00:00, execution_date=20241014T045458, start_date=20241014T045500, end_date=20241014T045503
+[2024-10-14T04:55:03.522+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-14T04:55:03.523+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-14T04:55:03.523+0000] {logging_mixin.py:190} INFO - Dag name:kaggle_ml_pipeline queued_at:2024-10-14 04:54:58.235963+00:00
+[2024-10-14T04:55:03.523+0000] {logging_mixin.py:190} INFO - Task hostname:3865df127200 operator:PythonOperator
+[2024-10-14T04:55:03.568+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-14T04:55:03.588+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-14T04:55:03.590+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

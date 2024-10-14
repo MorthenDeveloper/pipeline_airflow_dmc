@@ -48,9 +48,7 @@ def GetDataKaggle(**kwargs):
     api = KaggleApi()
     api.authenticate()
 
-    # Define la ruta donde se guardarán los archivos, relativa a la raíz del proyecto
-    data_path = os.path.join("dags", "data")
-
+    data_path=TRAIN_DATA_PATH
     # Crea la ruta si no existe
     os.makedirs(data_path, exist_ok=True)
 
@@ -69,14 +67,18 @@ def ml_kaggle(**kwargs):
     ml_system = MLSystem()
     data_path = kwargs['ti'].xcom_pull(task_ids='GetDataKaggle')  # Obtenemos la ruta de train.csv desde el XCom
     model = ml_system.train_kaggle(data_path=data_path)
-    kwargs['ti'].xcom_push(key='model', value=model)
+    
+    model_file_path = MODEL_PATH
+    dump(model, model_file_path)
+
+    kwargs['ti'].xcom_push(key='model', value=model_file_path)
 
 # Función para guardar el modelo
 def submit_model(**kwargs):
     ml_system = MLSystem()
-    model = kwargs['ti'].xcom_pull(key='model')
-    if model:
-        ml_system.model = model
+    model_file_path = kwargs['ti'].xcom_pull(key='model')
+    if model_file_path:
+        ml_system.model = load(model_file_path)
         ml_system.save_model(MODEL_PATH)
     else:
         print("No model found to save.")
@@ -93,15 +95,17 @@ def evaluate_model(**kwargs):
     # Cargar los datos de prueba
     df_test = pd.read_csv(test_data_path)
 
-    X_test = df_test.drop('target', axis=1)
-    y_test = df_test['target']
+    X_test = df_test.drop(columns=["loan_status"], axis=1)
+    y_test = df_test['loan_status']
 
     # Hacer predicciones
     y_pred = ml_system.model.predict(X_test)
 
     # Calcular la precisión
     accuracy = accuracy_score(y_test, y_pred)
-    #print(f'Evaluation accuracy: {accuracy}')
+    print(f'Evaluation accuracy: {accuracy}')
+
+    return accuracy
 
 get_data = PythonOperator(
     task_id='GetDataKaggle',
