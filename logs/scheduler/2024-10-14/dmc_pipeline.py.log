@@ -1,0 +1,21 @@
+[2024-10-14T04:43:56.812+0000] {processor.py:186} INFO - Started process (PID=6130) to work on /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:43:56.813+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dmc_pipeline.py for tasks to queue
+[2024-10-14T04:43:56.814+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:43:56.814+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:43:57.425+0000] {processor.py:925} INFO - DAG(s) 'kaggle_ml_pipeline' retrieved from /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:43:57.513+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:43:57.513+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-14T04:43:57.531+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:43:57.531+0000] {dag.py:4180} INFO - Setting next_dagrun for kaggle_ml_pipeline to 2024-10-14 04:00:00+00:00, run_after=2024-10-14 05:00:00+00:00
+[2024-10-14T04:43:57.697+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dmc_pipeline.py took 0.891 seconds
+[2024-10-14T04:44:28.564+0000] {processor.py:186} INFO - Started process (PID=6238) to work on /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:44:28.565+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dmc_pipeline.py for tasks to queue
+[2024-10-14T04:44:28.566+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:44:28.565+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:44:29.170+0000] {processor.py:925} INFO - DAG(s) 'kaggle_ml_pipeline' retrieved from /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:44:29.188+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:44:29.188+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-14T04:44:29.208+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:44:29.208+0000] {dag.py:4180} INFO - Setting next_dagrun for kaggle_ml_pipeline to 2024-10-14 04:00:00+00:00, run_after=2024-10-14 05:00:00+00:00
+[2024-10-14T04:44:29.226+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dmc_pipeline.py took 0.667 seconds
+[2024-10-14T04:44:59.293+0000] {processor.py:186} INFO - Started process (PID=6345) to work on /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:44:59.294+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dmc_pipeline.py for tasks to queue
+[2024-10-14T04:44:59.295+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:44:59.295+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:44:59.917+0000] {processor.py:925} INFO - DAG(s) 'kaggle_ml_pipeline' retrieved from /opt/airflow/dags/dmc_pipeline.py
+[2024-10-14T04:44:59.933+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:44:59.933+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-14T04:44:59.951+0000] {logging_mixin.py:190} INFO - [2024-10-14T04:44:59.951+0000] {dag.py:4180} INFO - Setting next_dagrun for kaggle_ml_pipeline to 2024-10-14 04:00:00+00:00, run_after=2024-10-14 05:00:00+00:00
+[2024-10-14T04:44:59.965+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dmc_pipeline.py took 0.679 seconds
