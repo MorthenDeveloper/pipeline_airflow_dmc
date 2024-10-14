@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier  # Como ejemplo
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from datetime import datetime, timedelta
@@ -24,8 +24,8 @@ class MLSystem:
         # Cargar los datos
         df = pd.read_csv(data_path)
 
-        # Dividimos los datos entre características y etiquetas (esto dependerá de la estructura del dataset de Kaggle)
-        X = df.drop(columns=["loan_status"],axis=1)  # Aquí 'target' es el nombre de la columna de las etiquetas (ajústalo según el dataset)
+        # Dividimos los datos entre características y etiquetas
+        X = df.drop(columns=["loan_status"],axis=1)
         y = df['loan_status']
         
         #Para cambiar las columnas categóricas a numéricas
@@ -38,14 +38,9 @@ class MLSystem:
         # Dividir los datos en conjuntos de entrenamiento y prueba
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-        # Entrenar un modelo de ejemplo (RandomForest)
+        # Entrenar un modelo de ejemplo
         self.model = RandomForestClassifier(n_estimators=100, random_state=42)
         self.model.fit(X_train, y_train)
-
-        # Evaluar el modelo en los datos de prueba
-        y_pred = self.model.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
-        print(f'Precisión: {accuracy}')
 
         return self.model
 

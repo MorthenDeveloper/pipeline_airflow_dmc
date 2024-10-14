@@ -44,7 +44,6 @@ dag = DAG(
 
 def GetDataKaggle(**kwargs):
 
-    # Inicia la API de Kaggle
     api = KaggleApi()
     api.authenticate()
 
@@ -52,7 +51,7 @@ def GetDataKaggle(**kwargs):
     # Crea la ruta si no existe
     os.makedirs(data_path, exist_ok=True)
 
-    # Descargar los archivos train.csv y test.csv a la ruta especificada
+    # Descargar los archivos train.csv y test.csv a la ruta
     competition_name = "playground-series-s4e10"
     api.competition_download_file(competition_name, "train.csv", path=data_path)
     api.competition_download_file(competition_name, "test.csv", path=data_path)
@@ -65,7 +64,7 @@ def GetDataKaggle(**kwargs):
 # Función para entrenar el modelo usando la clase MLSystem
 def ml_kaggle(**kwargs):
     ml_system = MLSystem()
-    data_path = kwargs['ti'].xcom_pull(task_ids='GetDataKaggle')  # Obtenemos la ruta de train.csv desde el XCom
+    data_path = kwargs['ti'].xcom_pull(task_ids='GetDataKaggle')
     model = ml_system.train_kaggle(data_path=data_path)
     
     model_file_path = MODEL_PATH
@@ -83,7 +82,7 @@ def submit_model(**kwargs):
     else:
         print("No model found to save.")
 
-# Nueva función para evaluar el modelo con el archivo test.csv
+# Nueva función para evaluar el modelo
 def evaluate_model(**kwargs):
     model_path = MODEL_PATH
     test_data_path = kwargs['ti'].xcom_pull(task_ids='GetDataKaggle')
@@ -137,5 +136,5 @@ evaluate_model = PythonOperator(
     provide_context=True,
     dag=dag
 )
-# Definir la secuencia de ejecución
+#Orden de los dags
 get_data >> train_model >> submit_model >> evaluate_model
