@@ -98,6 +98,12 @@ def evaluate_model(**kwargs):
     X_test = df_test.drop(columns=["loan_status"], axis=1)
     y_test = df_test['loan_status']
 
+    #Para cambiar las columnas categóricas a numéricas
+    label_encoder = LabelEncoder()
+    cat_col=X_test.select_dtypes(exclude=np.number).columns
+    for col in cat_col:
+      X_test[col]=label_encoder.fit_transform(X_test[col])
+
     # Hacer predicciones
     y_pred = ml_system.model.predict(X_test)
 
