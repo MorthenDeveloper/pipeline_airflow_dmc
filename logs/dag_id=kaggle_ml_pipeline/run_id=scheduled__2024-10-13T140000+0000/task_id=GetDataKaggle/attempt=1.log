@@ -1,0 +1,59 @@
+[2024-10-14T04:21:32.846+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-14T04:21:32.871+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kaggle_ml_pipeline.GetDataKaggle scheduled__2024-10-13T14:00:00+00:00 [queued]>
+[2024-10-14T04:21:32.885+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kaggle_ml_pipeline.GetDataKaggle scheduled__2024-10-13T14:00:00+00:00 [queued]>
+[2024-10-14T04:21:32.887+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-14T04:21:32.920+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): GetDataKaggle> on 2024-10-13 14:00:00+00:00
+[2024-10-14T04:21:32.934+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=611) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-14T04:21:32.937+0000] {standard_task_runner.py:72} INFO - Started process 1244 to run task
+[2024-10-14T04:21:32.938+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'kaggle_ml_pipeline', 'GetDataKaggle', 'scheduled__2024-10-13T14:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/data/dmc_pipeline.py', '--cfg-path', '/tmp/tmpba2jlua6']
+[2024-10-14T04:21:32.941+0000] {standard_task_runner.py:105} INFO - Job 18: Subtask GetDataKaggle
+[2024-10-14T04:21:33.011+0000] {task_command.py:467} INFO - Running <TaskInstance: kaggle_ml_pipeline.GetDataKaggle scheduled__2024-10-13T14:00:00+00:00 [running]> on host 3865df127200
+[2024-10-14T04:21:33.397+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kaggle_ml_pipeline' AIRFLOW_CTX_TASK_ID='GetDataKaggle' AIRFLOW_CTX_EXECUTION_DATE='2024-10-13T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-13T14:00:00+00:00'
+[2024-10-14T04:21:33.398+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-14T04:21:33.398+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-14T04:21:33.399+0000] {logging_mixin.py:190} INFO - Current task name:GetDataKaggle state:running start_date:2024-10-14 04:21:32.872401+00:00
+[2024-10-14T04:21:33.399+0000] {logging_mixin.py:190} INFO - Dag name:kaggle_ml_pipeline and current dag run status:running
+[2024-10-14T04:21:33.400+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-14T04:21:35.187+0000] {logging_mixin.py:190} INFO - train.csv: Skipping, found more recently modified local copy (use --force to force download)
+[2024-10-14T04:21:37.718+0000] {logging_mixin.py:190} INFO - test.csv: Skipping, found more recently modified local copy (use --force to force download)
+[2024-10-14T04:21:37.731+0000] {python.py:240} INFO - Done. Returned value was: dags/data/train.csv
+[2024-10-14T04:21:37.819+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-14T04:21:37.821+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=kaggle_ml_pipeline, task_id=GetDataKaggle, run_id=scheduled__2024-10-13T14:00:00+00:00, execution_date=20241013T140000, start_date=20241014T042132, end_date=20241014T042137
+[2024-10-14T04:21:37.841+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-14T04:21:37.843+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-14T04:21:37.844+0000] {logging_mixin.py:190} INFO - Dag name:kaggle_ml_pipeline queued_at:2024-10-14 04:21:28.103667+00:00
+[2024-10-14T04:21:37.845+0000] {logging_mixin.py:190} INFO - Task hostname:3865df127200 operator:PythonOperator
+[2024-10-14T04:21:37.932+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-14T04:21:37.944+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2024-10-14T04:21:37.954+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2024-10-14T04:24:55.560+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-14T04:24:55.580+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: kaggle_ml_pipeline.GetDataKaggle scheduled__2024-10-13T14:00:00+00:00 [queued]>
+[2024-10-14T04:24:55.591+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: kaggle_ml_pipeline.GetDataKaggle scheduled__2024-10-13T14:00:00+00:00 [queued]>
+[2024-10-14T04:24:55.591+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-14T04:24:55.607+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): GetDataKaggle> on 2024-10-13 14:00:00+00:00
+[2024-10-14T04:24:55.618+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2993) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-14T04:24:55.620+0000] {standard_task_runner.py:72} INFO - Started process 3524 to run task
+[2024-10-14T04:24:55.620+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'kaggle_ml_pipeline', 'GetDataKaggle', 'scheduled__2024-10-13T14:00:00+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/data/dmc_pipeline.py', '--cfg-path', '/tmp/tmpfz0hbsmm']
+[2024-10-14T04:24:55.622+0000] {standard_task_runner.py:105} INFO - Job 54: Subtask GetDataKaggle
+[2024-10-14T04:24:55.693+0000] {task_command.py:467} INFO - Running <TaskInstance: kaggle_ml_pipeline.GetDataKaggle scheduled__2024-10-13T14:00:00+00:00 [running]> on host 3865df127200
+[2024-10-14T04:24:56.150+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='kaggle_ml_pipeline' AIRFLOW_CTX_TASK_ID='GetDataKaggle' AIRFLOW_CTX_EXECUTION_DATE='2024-10-13T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-13T14:00:00+00:00'
+[2024-10-14T04:24:56.151+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-14T04:24:56.152+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-14T04:24:56.152+0000] {logging_mixin.py:190} INFO - Current task name:GetDataKaggle state:running start_date:2024-10-14 04:24:55.581875+00:00
+[2024-10-14T04:24:56.152+0000] {logging_mixin.py:190} INFO - Dag name:kaggle_ml_pipeline and current dag run status:running
+[2024-10-14T04:24:56.153+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-14T04:24:58.591+0000] {logging_mixin.py:190} INFO - train.csv: Skipping, found more recently modified local copy (use --force to force download)
+[2024-10-14T04:25:00.422+0000] {logging_mixin.py:190} INFO - test.csv: Skipping, found more recently modified local copy (use --force to force download)
+[2024-10-14T04:25:00.430+0000] {python.py:240} INFO - Done. Returned value was: dags/data/train.csv
+[2024-10-14T04:25:00.529+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-14T04:25:00.530+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=kaggle_ml_pipeline, task_id=GetDataKaggle, run_id=scheduled__2024-10-13T14:00:00+00:00, execution_date=20241013T140000, start_date=20241014T042455, end_date=20241014T042500
+[2024-10-14T04:25:00.606+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-14T04:25:00.607+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-14T04:25:00.608+0000] {logging_mixin.py:190} INFO - Dag name:kaggle_ml_pipeline queued_at:2024-10-14 04:24:51.252417+00:00
+[2024-10-14T04:25:00.609+0000] {logging_mixin.py:190} INFO - Task hostname:3865df127200 operator:PythonOperator
+[2024-10-14T04:25:00.685+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-14T04:25:00.698+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
